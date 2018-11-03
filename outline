@@ -1,16 +1,32 @@
-* What is React?
-  *uses
+Optional react developer tools for browswer
 
-*How to set up
-  *recommended skills
-  *Necessary software
-  *Setting up the main document and files
-
-*components
-
-*render
+JSX: 
+Javascript XML
+ Can write what looks what html and create your own xml like tags
+  not manditory
+   compare JSX and non-JSX EXAMPLE
+  under the hood runs createElement
+  closer to javascript, instead of HTML, so:
+   * className is used instead of class for adding CSS classes, as class is a reserved keyword in JavaScript.
+   * Properties and methods in JSX are camelCase – onclick will become onClick.
+   * Self-closing tags must end in a slash – e.g. <img />
+  Can include javascript insidse brackets
+   See EXAMPLE
  
-*state
 
-*props
-
+components: simple and class
+ Pretty Much everything in React is a component:
+  Everything loads into main App component, and each component usually gets own file
+  export component and load it into necessary file
+  components can be nested
+  *Simple
+   is a function, doesn't use class keyword
+   gets called to insert jsx into page
+   EXAMPLE
+  *Class
+   uses class key word
+   custom class component
+    name capitalized to differentiate from built-in html components
+   must include render()
+   can only return one parent element
+   EXAMPLE
