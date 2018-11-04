@@ -1,32 +1,37 @@
-Optional react developer tools for browswer
+JSX
+ JSX allows the user to write, render, and return what looks html and include custom xml-like tags to make writing code to render simpler and more concise.  Using JSX is not manditory -- the actual html code is generated using createElement, so it is up to the user to determine what makes their code easier to write/read.
+ 
+ ~EXAMPLE USING JSX vs non-JSX.
+ 
+ JSX is actually closer to javascript than it is to html, so there are a few things to note:
+  * className is used to add css classes
+  * in JSX, properties and methods are camelCase
+  * self-closing tags have to end in a slash
+ 
+ Javascript may also be used inside of JSX by using curly braces.
+ 
+ ~EXAMPLE OF THIS
 
-JSX: 
-Javascript XML
- Can write what looks what html and create your own xml like tags
-  not manditory
-   compare JSX and non-JSX EXAMPLE
-  under the hood runs createElement
-  closer to javascript, instead of HTML, so:
-   * className is used instead of class for adding CSS classes, as class is a reserved keyword in JavaScript.
-   * Properties and methods in JSX are camelCase – onclick will become onClick.
-   * Self-closing tags must end in a slash – e.g. <img />
-  Can include javascript insidse brackets
-   See EXAMPLE
+   
+COMPONENTS
+ Nearly everything in React is a component.  Components are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
+ 
+ ~EXAMPLE SHOW HOW TO EXPORT AND LOAD
+ 
+There are two main types of components in React: Class components and Simple Components
+SIMPLE
+ Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page.
+ ~EXAMPLE OF A SIMPLE COMPONENT
+CLASS
+ In comparison, components with the key word "class" are custom class components.  The name of the class in Render must be capitalized to differentiate the custom component from built-in html components and it must extend Component. Class components must include render(), and the included return statement can only return a single parent element.
+ 
+ ~EXAMPLE OF A CLASS COMPONENT
+ 
+ Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).
+ 
+Components may be nested as well.
+
+~EXAMPLE OF A NESTED COMPONENTS
  
 
-components: simple and class
- Pretty Much everything in React is a component:
-  Everything loads into main App component, and each component usually gets own file
-  export component and load it into necessary file
-  components can be nested
-  *Simple
-   is a function, doesn't use class keyword
-   gets called to insert jsx into page
-   EXAMPLE
-  *Class
-   uses class key word
-   custom class component
-    name capitalized to differentiate from built-in html components
-   must include render()
-   can only return one parent element
-   EXAMPLE
+ 
