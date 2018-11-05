@@ -6,7 +6,7 @@
  JSX is actually closer to javascript than it is to html, so there are a few things to note:
   * className is used to add css classes
   * in JSX, properties and methods are camelCase
-  * self-closing tags have to end in a slash
+  * self-closing tags need to end in a slash
  
  Javascript may also be used inside of JSX by using curly braces.
  
@@ -19,11 +19,11 @@
  ~EXAMPLE SHOW HOW TO EXPORT AND LOAD
  
 There are two main types of components in React: Class components and Simple Components
-### SIMPLE
+#### SIMPLE
  Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page.
  ~EXAMPLE OF A SIMPLE COMPONENT
-### CLASS
- In comparison, components with the key word "class" are custom class components.  The name of the class in Render must be capitalized to differentiate the custom component from built-in html components and it must extend Component. Class components must include render(), and the included return statement can only return a single parent element.
+#### CLASS
+ In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in html components and it must extend the Component class. Class components must include render(), and the included return statement can only return a single parent element.
  
  ~EXAMPLE OF A CLASS COMPONENT
  
