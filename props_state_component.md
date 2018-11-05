@@ -7,7 +7,7 @@ React.js allows reusable code to be created that can be applied to anywhere, par
 ⋅⋅* State
 
 ## Component
-
+**We already have a section that discusses class and simple components, if there is anything here that is not discussed in those sections, we should probably move it there, otherwise I don't think we need this section here**
 React.Component is a type of class that accepts inputs from the user that returns the way html should be presented after the input. An example is located right below, where Hello class returns a h1 tag within div tag that displays "Hi!" after it has been called.
 
 `class Hello extends React.Component {
@@ -30,6 +30,7 @@ ReactDOM.render(
 
 The render function of ReactDOM allows React.js to change the UI for the user, such as changing the element with id "first" in this particular example.
 
+**I would add a little more explanation about these two sections below, instead of just saying what each thing is, show/tell how you would use it, and give the user a little more direction. Just by reading what's below, I'm not really sure how I would go about using these two things**
 ## Prop
 
 Prop stands for property, builds up on component where the specified properties are passed into the component.
