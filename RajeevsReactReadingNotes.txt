@@ -57,3 +57,84 @@ down to the children by using props, keeping them in sync.
       </button>
       );
     }
+----------------------------------------------------------------------
+Tania Rascia:
+
+Setting up:
+
+Static HTML file:
+make a basic index.html fule. Load three CDNs in the head - React,
+React DOM and Babel.
+
+Make a div with id root. Create a script tag.
+EX:
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // React code will go here
+    </script>
+
+</body>
+
+</html>
+
+
+-To create a component, create a class that extends React.Component.
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+-This is the more messy method. It is less efficient and hard to maintain
+----------------------------------------------------------------
+
+-Facebook has created Create React App. This is a preconfigured environment
+with everything needed to build a React app.
+
+-Need Node js though. But can create a react project using
+
+npx create-react-app <NAME>
+
+-To start the project
+cd <NAME>
+npm start
+
+
+-This will open a new window at localhost:3000 with the new app.
+
+-Editing the file src/App.js at this point will cause the changes to be reflected in this
+app.
+
+-Can clear out files in src (except index.css and index.js) and start from
+scratch. In index.js need to import React, ReactDom and the css file.
+
+-Can now write javascript code here to render the page.
+-EX: App class that extends Component
+
+-ReactDevTools is a potential extension that helps when working with react.
+
+
+JSX - Javascript XML
+
+Can export components and load them in different files.
+Good for organization.
+
+-Simple component: A function. Doesn't use the class keyword. Arrow notation.
+function that simply returns what needs to be rendered. Class component has a render function
+A simple component does not.
+
+-Properties:
+Data passed to components is stored in the virtualDOM
