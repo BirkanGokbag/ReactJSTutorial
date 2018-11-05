@@ -1,4 +1,4 @@
-JSX
+## JSX
  JSX allows the user to write, render, and return what looks html and include custom xml-like tags to make writing code to render simpler and more concise.  Using JSX is not manditory -- the actual html code is generated using createElement, so it is up to the user to determine what makes their code easier to write/read.
  
  ~EXAMPLE USING JSX vs non-JSX.
@@ -13,16 +13,16 @@ JSX
  ~EXAMPLE OF THIS
 
    
-COMPONENTS
+## COMPONENTS
  Nearly everything in React is a component.  Components are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
  
  ~EXAMPLE SHOW HOW TO EXPORT AND LOAD
  
 There are two main types of components in React: Class components and Simple Components
-SIMPLE
+### SIMPLE
  Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page.
  ~EXAMPLE OF A SIMPLE COMPONENT
-CLASS
+### CLASS
  In comparison, components with the key word "class" are custom class components.  The name of the class in Render must be capitalized to differentiate the custom component from built-in html components and it must extend Component. Class components must include render(), and the included return statement can only return a single parent element.
  
  ~EXAMPLE OF A CLASS COMPONENT
