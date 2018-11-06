@@ -92,6 +92,20 @@ ReactDOM.render() function to put this HTML within the div assigned with the roo
 (described in later sections). However, again, this method is not the preferred way to use React. Instead it is a better idea to use create-react-app as described below.
 
 ## Using React via create-react-app
+The react app can also be generated using a preconfigured environment developed
+by Facebook. To use this, NodeJS (and NPM which comes with it) needs to be
+installed with a version number greater than 5.2.
+
+Once NodeJS has been installed, a react project can be created using the command:
+`npx create-react-app <NAME>` where <NAME> is the name of the project.
+
+To start a project once created, first enter the directory of the project, then run the command: `npm start`
+This will load a web browser with the webapp at localhost: 3000.
+
+
+The files being used to generate this site are found in the ./<NAME>/src folder.
+The file index.js contains the code which renders the react code using the component defined in app.js. By modifying app.js, the display of the app will also change. If you wish to start from scratch, you can delete all of the files in the src directory except for index.js and index.css. In addition, ensure that the index.js file is importing react, reactDOM and the css file. At this stage, you will be able to write javascript code to render the page as you see fit. The rest of this tutorial will describe the various tools available to actually design a UI using React.
 
 
 # References
+[link] (https://www.taniarascia.com/getting-started-with-react/))
