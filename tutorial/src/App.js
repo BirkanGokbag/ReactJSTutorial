@@ -3,8 +3,8 @@ import Game from './Game';
 import SignIn from './SignIn';
 import {BrowserRouter, Route} from 'react-router-dom';
 var DATA = {
-  player1Name: "michael",
-  player2Name: "shannon",
+  player1Name: "",
+  player2Name: "",
 }
 class App extends Component {
   render() {

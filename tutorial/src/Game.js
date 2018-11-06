@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Game.css';
 
 
 export default class Game extends React.Component {
@@ -9,6 +9,8 @@ export default class Game extends React.Component {
     this.state = {
       player1: 1,
       player2: 2,
+      player1Score: 0,
+      player2Score: 0,
       currentPlayer: 1,
       board: [],
       gameOver: false,
@@ -56,11 +58,11 @@ export default class Game extends React.Component {
       // Check status of board
       let result = this.checkAll(board);
       if (result === this.state.player1) {
-        this.setState({ board, gameOver: true, message: this.props.playerData.player1Name + ' wins!' });
+        this.setState({ board, gameOver: true, player1Score: this.state.player1Score + 1, message: this.props.playerData.player1Name + ' wins!' });
       } else if (result === this.state.player2) {
-        this.setState({ board, gameOver: true, message: this.props.playerData.player2Name + ' wins!' });
+        this.setState({ board, gameOver: true, player2Score: this.state.player2Score + 1, message: this.props.playerData.player2Name + ' wins!' });
       } else if (result === 'draw') {
-        this.setState({ board, gameOver: true, message: 'Draw game.' });
+        this.setState({ board, gameOver: true, player1Score: this.state.player1Score + .5, player2Score: this.state.player2Score + .5, message: 'Draw game.' });
       } else {
         this.setState({ board, currentPlayer: this.togglePlayer() });
       }
@@ -161,6 +163,10 @@ export default class Game extends React.Component {
           </tbody>
         </table>
         <p className="message">{this.state.message}</p>
+        <p className="message">Scoreboad</p>
+        <p className="message">{this.props.playerData.player1Name}: {this.state.player1Score}</p>
+        <p className="message">{this.props.playerData.player2Name}: {this.state.player2Score}</p>
+
       </div>
     );
   }
