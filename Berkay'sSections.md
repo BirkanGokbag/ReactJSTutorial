@@ -18,7 +18,7 @@ The uncontrolled input types can be submitted by using the onSubmit tag attached
 
 where `this.handleSubmit` is a function.
 
-The controlled inputs uses the onChange to capture the text value in the input when any change occurs. the variable in the value attribute is updated, and the function called in `onChange` attribute executes at any change
+The controlled inputs uses the `onChange` to capture the text value in the input when any change occurs. the variable in the value attribute is updated, and the function called in `onChange` attribute executes at any change
 
 #### An Example Form
 
