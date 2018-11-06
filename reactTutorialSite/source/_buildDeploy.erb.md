@@ -3,30 +3,31 @@ Everything done so far has been in a development environment meaning everything 
 
 One possible deployment method is if you just want to compile all the React code and place it in the root of a directory somewhere, you can run the following line:
  
- `~ npm run build `
+ `npm run build `
 
    
 This will create a build folder which will contain your app. Put the contents of that folder anywhere, and you’re done!
 
 Another option is to have npm deploy for us. Github has free hosting so we will build to GitHub pages. Before doing this, make sure you’ve exited out of your local React environment, so the code isn’t currently running. First, we’re going to add a homepage field to package.json, that has the URL we want our app to live on. This code segment looks like:
  
- `~ "homepage": "https://An-Error-Occured.github.io/An-Error-Occured-Tech-Tasks-I-II/tutorial", `
+ `"homepage": "https://{username}.github.io/{repo_name}", `
+ 
+Where username is your github username and repo_name is the repository where the react application is located.
  
 We’ll also add these two lines to the scripts property.
- `~ "predeploy": "npm run build", `
- `~ "deploy": "gh-pages -d build" `
+ `"predeploy": "npm run build", `
+ `"deploy": "gh-pages -d build" `
 
 In your project, you’ll add gh-pages to the devDependencies.
 
-`~npm install --save-dev gh-pages`
+`npm install --save-dev gh-pages`
  
 We’ll create the build, which will have all the compiled, static files.
 
-`~ npm run build `
+`npm run build `
 
 Finally, we’ll deploy to gh-pages.
 
-`~ npm run deploy `
+`npm run deploy `
 
-And we’re done! The app is now available live at.
- 
+And we’re done! The app is now available live at: https://{username}.github.io/{repo_name}
