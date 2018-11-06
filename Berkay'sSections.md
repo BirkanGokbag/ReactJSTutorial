@@ -36,6 +36,7 @@ in the connect 4 game we used a form to get the player's information, and the co
    </label>
   <input type="submit" value="Submit" />
 </form>
+
 handleSubmit(event) {
   if(this.state.valuePlayer2 != '' && this.state.valuePlayer1 != ''){
     this.props.playerData.player1Name = this.state.valuePlayer1;
