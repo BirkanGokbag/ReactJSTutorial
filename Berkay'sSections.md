@@ -24,6 +24,40 @@ where this.handleSubmit is a function.
 
 The controlled inputs uses the onChange to capture the text value in the input when any change occurs. the variable in the value attribute is updated, and the function called in onChange attribute executes at any change
 
+#### An Example Form
+
+in the connect 4 game we used a form to get the player's information, and the code snippet for this function is:
+
+<form onSubmit={this.handleSubmit}>
+  <label>
+    Player 1 Name:
+    <input type="text" value={this.state.valuePlayer1} onChange={this.handleChangePlayer1} />
+  </label>
+  <label>
+     Player 2 Name:
+     <input type="text" value={this.state.valuePlayer2} onChange={this.handleChangePlayer2} />
+   </label>
+  <input type="submit" value="Submit" />
+</form>
+  
+handleSubmit(event) {
+  if(this.state.valuePlayer2 != '' && this.state.valuePlayer1 != ''){
+    this.props.playerData.player1Name = this.state.valuePlayer1;
+    this.props.playerData.player2Name = this.state.valuePlayer2;
+    this.setState({toGame: true});
+  }else{
+    alert('please enter a name for both players');
+  }
+}
+
 ## Pulling API data using fetch.then
+
+Fetch is similar to JavaScript CDN. The browser requests the APIs of a specific external web server. The sample syntax is:
+
+fetch(LINK + DEFAULT_QUERY).then(response => response.json()).then(data => this.setState({ hits: data.hits }));
+
+where LINK is the FQDN without the query section. DEFAULT_QUERY is the query section that is added to the website link. 
+
+
 
 
