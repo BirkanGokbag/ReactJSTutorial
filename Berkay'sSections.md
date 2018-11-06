@@ -4,4 +4,5 @@ Forms are very useful elements in a webpages, and can be written in many languag
 
 #### Basic Text Input
 
-The tag <textarea> defines an input field for the user. If a text is added inside the tags, the user will see that text in the text field. The text field will add a scroll bar automatically if the number of lines exceed the vertical size of the text field. The size of the text field can also be changed using the left bottom cursor.
+There are two methods of input in React: controlled and uncontrolled. The main difference is that in controlled inputs, the form data is handled by a React component, while in uncontrolled components, the form data is handled by DOM itself.
+
