@@ -154,7 +154,6 @@ export default class Game extends React.Component {
     return (
       <div>
 
-        <div className="button" onClick={() => {this.initBoard()}}>New Game</div>
         <table>
           <thead>
           </thead>
@@ -162,10 +161,10 @@ export default class Game extends React.Component {
             {this.state.board.map((row, i) => (<Row key={i} row={row} play={this.play} />))}
           </tbody>
         </table>
+        <div className="button" onClick={() => {this.initBoard()}}>New Game</div>
         <p className="message">{this.state.message}</p>
         <p className="message">Scoreboad</p>
-        <p className="message">{this.props.playerData.player1Name}: {this.state.player1Score}</p>
-        <p className="message">{this.props.playerData.player2Name}: {this.state.player2Score}</p>
+        <p className="message">{this.props.playerData.player1Name}: {this.state.player1Score} ----- {this.props.playerData.player2Name}: {this.state.player2Score}</p>
 
       </div>
     );
