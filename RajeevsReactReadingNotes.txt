@@ -1,0 +1,140 @@
+Set up
+Necessary Javascript Links for static html
+Creating React apps    (my sections)
+----------------------------------
+
+Notes:
+
+-React uses arrow functions, let and const statements. Might be a good idea
+to explain what these are since they're a part of a newer version of javascript.
+
+-React allows for the development of complex UIs using small pieces of isolated
+code known as components.
+
+- A react component takes in parameters, called props, and returns a
+hierarchy of views to display via the render method.
+
+-The render method returns a description of what you want to see.
+This return value is a React element. JSX is the syntax used to write this.
+a line such as <div /> is changed at build time to React.createElement('div').
+
+-React takes this description and displays the result.
+
+-Any javascript expression can be placed within the JSX braces. Hence, each
+React element is a javascript object that can be stored in a variable.
+
+-Arrow notation. Instead of: onclick = {function() {alert('click');}}
+can just do onClick = {() => alert('click')}
+
+-To remember things, components use state. this.state in the constructor
+ can be used to give the component a state.
+
+ -Need to call super(props) when defining the constructor of a subclass.
+ This includes all react component classes that have a constructor.
+
+-To collect data from multiple children, or to have two child components
+communicate with each other, you need to declare the shared state in their
+parent component instead. The parent component can pass the state back
+down to the children by using props, keeping them in sync.
+
+-Try and maintain immutability if possible.
+  -Complex features become easier to implement, as you can use older data
+  rather than just replacing it
+  -Can detect changes in the object.
+  -Easier to build pure components in react. Can help determine if changes
+  have been made.
+
+-Function components
+  simpler way to write components that only contain a render method and don't
+  have their own state. Function that takes props as input and returns
+  what should be rendered.
+
+  ex:
+    function Square(props){
+      return(
+      <button classname ="square" onClick={props.onClick}>
+        {props.value}
+      </button>
+      );
+    }
+----------------------------------------------------------------------
+Tania Rascia:
+
+Setting up:
+
+Static HTML file:
+make a basic index.html fule. Load three CDNs in the head - React,
+React DOM and Babel.
+
+Make a div with id root. Create a script tag.
+EX:
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // React code will go here
+    </script>
+
+</body>
+
+</html>
+
+
+-To create a component, create a class that extends React.Component.
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+-This is the more messy method. It is less efficient and hard to maintain
+----------------------------------------------------------------
+
+-Facebook has created Create React App. This is a preconfigured environment
+with everything needed to build a React app.
+
+-Need Node js though. But can create a react project using
+
+npx create-react-app <NAME>
+
+-To start the project
+cd <NAME>
+npm start
+
+
+-This will open a new window at localhost:3000 with the new app.
+
+-Editing the file src/App.js at this point will cause the changes to be reflected in this
+app.
+
+-Can clear out files in src (except index.css and index.js) and start from
+scratch. In index.js need to import React, ReactDom and the css file.
+
+-Can now write javascript code here to render the page.
+-EX: App class that extends Component
+
+-ReactDevTools is a potential extension that helps when working with react.
+
+
+JSX - Javascript XML
+
+Can export components and load them in different files.
+Good for organization.
+
+-Simple component: A function. Doesn't use the class keyword. Arrow notation.
+function that simply returns what needs to be rendered. Class component has a render function
+A simple component does not.
+
+-Properties:
+Data passed to components is stored in the virtualDOM
