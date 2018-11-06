@@ -14,7 +14,7 @@ https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-app
 ## Contributions
 Alyssa Langhals:
 
-Berkay Kaplan:
+Berkay Kaplan: Explained how to get the values from the form and the usage of fetch. Created Berkay'sSection.md and this was used in _formsAPI in the middleman website.
 
 Birkan Gokbag:
 
