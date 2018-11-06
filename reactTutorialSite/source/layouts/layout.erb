@@ -6,11 +6,18 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
-    <%= stylesheet_link_tag "site" %>
+    <title><%= current_page.data.title || "React.js Tutorial" %></title>
+<link rel="stylesheet" type="text/css" href="css/site.css">
+    <%= stylesheet_link_tag "site.css" %>
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <%= yield %>
+    <div class="box">
+      <h1 id = "title" > React.js Tutorial</h1>
+      <h4 id = "date"> Last Updated: 11/07/18</h4>
+      <h4 id = "team" > <-- An Error Occured --> </h4>
+      <hr>
+      <%= yield %>
+    </div>
   </body>
 </html>
