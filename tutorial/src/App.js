@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       player1: 1,
       player2: 2,
-      currentPlayer: null,
+      currentPlayer: 1,
       board: [],
       gameOver: false,
       message: ''
@@ -31,9 +31,7 @@ class App extends React.Component {
     
     this.setState({
       board,
-      currentPlayer: this.state.player1,
-      gameOver: false,
-      message: ''
+
     });
   }
   
@@ -70,13 +68,13 @@ class App extends React.Component {
   
   checkVertical(board) {
     // Check only if row is 3 or greater
-    for (let r = 3; r < 6; r++) {
-      for (let c = 0; c < 7; c++) {
-        if (board[r][c]) {
-          if (board[r][c] === board[r - 1][c] &&
-              board[r][c] === board[r - 2][c] &&
-              board[r][c] === board[r - 3][c]) {
-            return board[r][c];    
+    for (let row = 3; row < 6; row++) {
+      for (let col = 0; col < 7; col++) {
+        if (board[row][col]) {
+          if (board[row][col] === board[row - 1][col] &&
+              board[row][col] === board[row - 2][col] &&
+              board[row][col] === board[row - 3][col]) {
+            return board[row][col];    
           }
         }
       }
@@ -85,13 +83,13 @@ class App extends React.Component {
   
   checkHorizontal(board) {
     // Check only if column is 3 or less
-    for (let r = 0; r < 6; r++) {
-      for (let c = 0; c < 4; c++) {
-        if (board[r][c]) {
-          if (board[r][c] === board[r][c + 1] && 
-              board[r][c] === board[r][c + 2] &&
-              board[r][c] === board[r][c + 3]) {
-            return board[r][c];
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 4; col++) {
+        if (board[row][col]) {
+          if (board[row][col] === board[row][col + 1] && 
+              board[row][col] === board[row][col + 2] &&
+              board[row][col] === board[row][col + 3]) {
+            return board[row][col];
           }
         }
       }
@@ -100,13 +98,13 @@ class App extends React.Component {
   
   checkDiagonalRight(board) {
     // Check only if row is 3 or greater AND column is 3 or less
-    for (let r = 3; r < 6; r++) {
+    for (let row = 3; row < 6; row++) {
       for (let c = 0; c < 4; c++) {
         if (board[r][c]) {
-          if (board[r][c] === board[r - 1][c + 1] &&
-              board[r][c] === board[r - 2][c + 2] &&
-              board[r][c] === board[r - 3][c + 3]) {
-            return board[r][c];
+          if (board[row][col] === board[row - 1][col + 1] &&
+              board[row][col] === board[row - 2][col + 2] &&
+              board[row][col] === board[row - 3][col + 3]) {
+            return board[row][col];
           }
         }
       }
@@ -115,13 +113,13 @@ class App extends React.Component {
   
   checkDiagonalLeft(board) {
     // Check only if row is 3 or greater AND column is 3 or greater
-    for (let r = 3; r < 6; r++) {
-      for (let c = 3; c < 7; c++) {
-        if (board[r][c]) {
-          if (board[r][c] === board[r - 1][c - 1] &&
-              board[r][c] === board[r - 2][c - 2] &&
-              board[r][c] === board[r - 3][c - 3]) {
-            return board[r][c];
+    for (let row = 3; row < 6; row++) {
+      for (let col = 3; col < 7; col++) {
+        if (board[row][c]) {
+          if (board[row][col] === board[row - 1][col - 1] &&
+              board[row][col] === board[row - 2][col - 2] &&
+              board[row][col] === board[row - 3][col - 3]) {
+            return board[row][col];
           }
         }
       }
@@ -129,9 +127,9 @@ class App extends React.Component {
   }
   
   checkDraw(board) {
-    for (let r = 0; r < 6; r++) {
-      for (let c = 0; c < 7; c++) {
-        if (board[r][c] === null) {
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 7; col++) {
+        if (board[row][col] === null) {
           return null;
         }
       }
