@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Redirect} from 'react-router-dom';
-
+import {Redirect} from 'react-router-dom';
 export default class SignUp extends Component { 
 constructor(props) {
     super(props);
@@ -23,16 +22,14 @@ constructor(props) {
   }
 
   handleSubmit(event) {
-    //this.props.history.push('/game');
-    this.setState({toGame: true});
-
-/*
     if(this.state.valuePlayer2 != '' && this.state.valuePlayer1 != ''){
-      this.props.history.push('/game');
+      this.props.playerData.player1Name = this.state.valuePlayer1;
+      this.props.playerData.player2Name = this.state.valuePlayer2;
+      this.setState({toGame: true});
     }
     else{
-      alert('please enter names for both players');
-    }*/
+      alert('please enter a name for both players');
+    }
   }
 
   render() {

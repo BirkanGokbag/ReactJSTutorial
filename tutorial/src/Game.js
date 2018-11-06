@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-class App extends React.Component {
+export default class Game extends React.Component {
   constructor(props) {
     super(props);
     
@@ -12,7 +12,7 @@ class App extends React.Component {
       currentPlayer: 1,
       board: [],
       gameOver: false,
-      message: ''
+      message: '',
     };
     
     // Bind play function to App component
@@ -31,6 +31,9 @@ class App extends React.Component {
     
     this.setState({
       board,
+      currentPlayer: this.state.player1,
+      gameOver: false,
+      message: '',
 
     });
   }
@@ -53,9 +56,9 @@ class App extends React.Component {
       // Check status of board
       let result = this.checkAll(board);
       if (result === this.state.player1) {
-        this.setState({ board, gameOver: true, message: 'Player 1 (red) wins!' });
+        this.setState({ board, gameOver: true, message: this.props.playerData.player1Name + ' wins!' });
       } else if (result === this.state.player2) {
-        this.setState({ board, gameOver: true, message: 'Player 2 (yellow) wins!' });
+        this.setState({ board, gameOver: true, message: this.props.playerData.player2Name + ' wins!' });
       } else if (result === 'draw') {
         this.setState({ board, gameOver: true, message: 'Draw game.' });
       } else {
@@ -148,8 +151,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+
         <div className="button" onClick={() => {this.initBoard()}}>New Game</div>
-        
         <table>
           <thead>
           </thead>
@@ -157,7 +160,6 @@ class App extends React.Component {
             {this.state.board.map((row, i) => (<Row key={i} row={row} play={this.play} />))}
           </tbody>
         </table>
-        
         <p className="message">{this.state.message}</p>
       </div>
     );
@@ -191,4 +193,3 @@ const Cell = ({ value, columnIndex, play }) => {
 };
 
 
-export default App;

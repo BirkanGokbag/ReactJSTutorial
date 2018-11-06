@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Game from './Game';
 import SignIn from './SignIn';
 import {BrowserRouter, Route} from 'react-router-dom';
-
+var DATA = {
+  player1Name: "michael",
+  player2Name: "shannon",
+}
 class App extends Component {
   render() {
     return (
@@ -10,12 +13,12 @@ class App extends Component {
         <div>
           <Route exact={true} path='/' render={() => (
             <div className="App">
-              <SignIn />
+              <SignIn playerData={DATA}/>
             </div>
           )}/>
           <Route exact={true} path='/game' render={() => (
             <div className="App">
-              <Game />
+              <Game playerData={DATA}/>
             </div>
           )}/>
         </div>
