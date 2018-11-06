@@ -24,7 +24,8 @@ The controlled inputs uses the `onChange` to capture the text value in the input
 
 in the connect 4 game we used a form to get the player's information, and the code snippet for this function is:
 
-```
+~~~
+
 <form onSubmit={this.handleSubmit}>
   <label>
     Player 1 Name:    
@@ -36,6 +37,8 @@ in the connect 4 game we used a form to get the player's information, and the co
    </label>
   <input type="submit" value="Submit" />
 </form>
+
+
 handleSubmit(event) {
   if(this.state.valuePlayer2 != '' && this.state.valuePlayer1 != ''){
     this.props.playerData.player1Name = this.state.valuePlayer1;
@@ -45,7 +48,8 @@ handleSubmit(event) {
     alert('please enter a name for both players');
   }
 }
-```
+
+~~~
 
 ## Pulling API data using fetch.then
 
