@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -177,11 +176,11 @@ const Row = ({ row, play }) => {
 };
 
 const Cell = ({ value, columnIndex, play }) => {
-  let color = 'white';
+  let color = 'noPlayer';
   if (value === 1) {
-    color = 'red';
+    color = 'player1color';
   } else if (value === 2) {
-    color = 'yellow';
+    color = 'player2color';
   }
     
   return (
