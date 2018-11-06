@@ -35,10 +35,10 @@
 ## COMPONENTS
  Nearly everything in React is a component.  Components are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
  
- `~EXAMPLE SHOW HOW TO EXPORT AND LOAD`
- 
 There are two main types of components in React: Class components and Simple Components
+
 #### SIMPLE
+
  Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page.
  
  Here is a Simple component that will return a header.
@@ -53,15 +53,38 @@ There are two main types of components in React: Class components and Simple Com
 ``` 
 
 #### CLASS
+
  In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in html components and it must extend the Component class. Class components must include render(), and the included return statement can only return a single parent element.
  
- `~EXAMPLE OF A CLASS COMPONENT`
+ ```
+ class Footer extends Component { 
+   render(){
+    return (
+        <div className="footer">
+          <h1>An Error Occured</h1>
+        </div>
+    );
+   }
+}
+``` 
  
  Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).
  
-Components may be nested as well.
+To use a component, insert the function/class name inside of a bracket like `<Header \>`
 
-`~EXAMPLE OF A NESTED COMPONENTS`
+Components may also be nested.  The class below returns an element that has a header and footer inside of it.
+```
+class Body extends Component {
+  render() {
+    return (
+      <div className="body">
+       <Header />
+       <Footer />
+      </div>
+    );
+  }
+}
+```
  
 
  
