@@ -9,19 +9,19 @@ There are two methods of input in React: controlled and uncontrolled. The main d
 Uncontrolled inputs resemble HTML form elements, and these inputs can remember the last user input. With this input, the value is needed to be pulled when the user needs it or when it is submitted. Their value can be get using the onClick function.  
 Controlled inputs is more the React way and update the variable attached to the tag when the value in the input field is changed. For instance, this can be done with the syntax:  
 
-```
+`
 <input value={someValue} onChange={handleChange} />  
+`
 
-```
 where someValue is a variable and handleChange is the function.  
 
 #### Submitting the Form
 
 The uncontrolled input types can be submitted by using the onSubmit tag attached to a form element that has a button. This can be done with the syntax:  
 
-```
+`
 <form onSubmit={this.handleSubmit}>
-```
+`
 
 where this.handleSubmit is a function.  
 
@@ -31,7 +31,7 @@ The controlled inputs uses the onChange to capture the text value in the input w
 
 in the connect 4 game we used a form to get the player's information, and the code snippet for this function is:  
 
-```
+`
 <form onSubmit={this.handleSubmit}>
   <label>
     Player 1 Name:    
@@ -52,14 +52,14 @@ handleSubmit(event) {
     alert('please enter a name for both players');
   }
 }
-```
+`
 
 ## Pulling API data using fetch.then
 
 The browser connects to the API of an external web server and pulls the data it needs.. The sample syntax is:  
 
-```
+`
 fetch(url).then(result => result.json()).then(result => {this.setState({data: result})});
-```
+`
 
 The url is the website we want get the data from. The first then turns the result into the JSON format. The second then assigns the JSON API into the data array.  
