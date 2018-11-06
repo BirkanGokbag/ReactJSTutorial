@@ -10,7 +10,7 @@ This will create a build folder which will contain your app. Put the contents of
 
 Another option is to have npm deploy for us. Github has free hosting so we will build to GitHub pages. Before doing this, make sure you’ve exited out of your local React environment, so the code isn’t currently running. First, we’re going to add a homepage field to package.json, that has the URL we want our app to live on. This code segment looks like:
  
- `~ "homepage": "https://An-Error-Occured/An-Error-Occured-Tech-Tasks-I-II.github.io/tutorial", `
+ `~ "homepage": "https://An-Error-Occured.github.io/An-Error-Occured-Tech-Tasks-I-II/tutorial", `
  
 We’ll also add these two lines to the scripts property.
  `~ "predeploy": "npm run build", `
