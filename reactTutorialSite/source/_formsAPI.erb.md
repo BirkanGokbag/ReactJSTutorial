@@ -52,4 +52,4 @@ The browser connects to the API of an external web server and pulls the data it 
 
 `fetch(url).then(result => result.json()).then(result => {this.setState({data: result})});`
 
-The url is the website we want get the data from. The first then turns the result into the JSON format. The second then assigns the JSON API into the data array.  
+The `url` is the website we want get the data from. The first then turns the result into the JSON format. The second then assigns the JSON API into the data array.  
