@@ -47,7 +47,7 @@
 
 
 #### Verifying Installation
-  
+
   After installing NodeJS, you should check that your installation was successful by
   running  `node -v`, `npm -v`, and `npx -v`. All three should return a version number
   if the installation was successful.
@@ -96,7 +96,7 @@
 
 ~~~  
 
-(Source for this example code: [link] (https://www.taniarascia.com/getting-started-with-React/))
+(Source for this example code: [link](https://www.taniarascia.com/getting-started-with-React/))
 
 The first thing to note, is that in the head of this HTML file, three JavaScript files are loaded. In particular, there is a file for React, a file for the ReactDOM (React Document Object Model) and a CDN for babel, a toolchain which allows newer versions of JavaScript to be used in old browser.
 
