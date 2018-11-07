@@ -25,13 +25,13 @@ Build/Deploy - Used remember to tell the user how to perform the task.
 
 ## React App
 The React app was a combination of all of these above sections into a single demonstration of React's capabilities.
-To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-ErrorOccured-Tech-Tasks-I-II/tree/master/tutorial
+To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
 and download the source code. Follow the instructions in the tutorial readme to run this demo in a web browser.
 
 ## Contributions
 Alyssa Langhals: Wrote the section for React components and JSX.  
 
-Berkay Kaplan: Explained how to get the values from the form and the usage of fetch. Created Berkay'sSection.md and this was used in formsAPI in the middleman website.
+Berkay Kaplan: Explained how to get the values from the form and the usage of fetch. Created Berkay's Section.md and this was used in formsAPI in the middleman website.
 
 Birkan Gokbag: Wrote the section for props, and state.
 
