@@ -88,8 +88,3 @@ changeValue() {
 The changeValue sets the state for this, and it updates the this.state.name by adding 1 next to it. Therefore, after the first call of changeValue, we would have "hello1" rendered on the page. On the second time, we would have "hello11" rendered on the page, and "hello111" on the third time.
 
 Even though this.state.name shows "hello" if accessed within the function, on the page when the state is rendered, the changes will show, and it will be "hello111" instead.
-
-
-//References:
-1. https://reactjs.org/docs/components-and-props.html
-2. https://reactjs.org/docs/faq-state.html
