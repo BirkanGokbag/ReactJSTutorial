@@ -1,6 +1,6 @@
 # Props and State
 
-React.js allows reusable code to be created that can be applied to anywhere, partial code that can be applied to anywhere specified.  There are three data structures that allow React.js to do this in addition to component:
+React.js allows reusable code to be created that can be applied to anywhere, partial code that can be applied to anywhere specified.  There are two data structures that allow React.js to do this in addition to component:
 
 * Prop
 
@@ -85,7 +85,7 @@ changeValue() {
 }
 ~~~
 
-The changeValue sets the state for this, and it updates the this.state.name by adding 1 next to it. Therefore, after the fist call of changeValue, we would have "hello1" rendered on the page. On the second time, we would have "hello11" rendered on the page, and "hello111" on the third time.
+The changeValue sets the state for this, and it updates the this.state.name by adding 1 next to it. Therefore, after the first call of changeValue, we would have "hello1" rendered on the page. On the second time, we would have "hello11" rendered on the page, and "hello111" on the third time.
 
 Even though this.state.name shows "hello" if accessed within the function, on the page when the state is rendered, the changes will show, and it will be "hello111" instead.
 
