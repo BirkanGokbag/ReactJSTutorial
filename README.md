@@ -10,6 +10,10 @@ https://Reactjs.org/tutorial/tutorial.html
 
 https://tylermcginnis.com/Reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-React/
 
+https://reactjs.org/docs/components-and-props.html
+
+https://reactjs.org/docs/faq-state.html
+
 
 ## Bloom's Levels of Cognition
 Introduction/Setup - Focused primarily on knowledge and understanding. Telling the reader what they need to do and giving an overview of what React is.
