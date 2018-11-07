@@ -22,7 +22,7 @@
 
  JSX is actually closer to JavaScript than it is to html, so there are a few things to note:
   * className is used to add css classes
-  * in JSX, properties and methods are camelCase
+  * in JSX, properties and methods are camelCase, like onClick
   * self-closing tags need to end in a slash
 
  JavaScript may also be used inside of JSX by using curly braces.
@@ -37,18 +37,18 @@
 
 
 ## COMPONENTS
- Nearly everything in React is a component.  Components are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
+ Nearly everything in React is a component.  Components are, at their core, reusable snippets of code that are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
 
 There are two main types of components in React: Class components and Simple Components
 
 #### SIMPLE
 
- Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page.
+ Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page. (Props can be used to pass information into these functions, as will be discussed in the next sections.)
 
  Here is a Simple component that will return a header.
 
 ~~~
- const Header = () => {
+ function Header(){
     return (
         <div className="header">
           <h1>Connect 4</h1>
@@ -59,7 +59,7 @@ There are two main types of components in React: Class components and Simple Com
 
 #### CLASS
 
- In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in html components and it must extend the Component class. Class components must include render(), and the included return statement can only return a single parent element.
+ In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in html components and it must extend the Component class. Class components must include  and implementation of the render() method, and the included return statement can only return a single parent element.
 
 ~~~
  class Footer extends Component {
@@ -73,7 +73,7 @@ There are two main types of components in React: Class components and Simple Com
 }
 ~~~
 
- Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).
+ Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).  Like classes in other programming languages, there may also be other functionality inside of these class components to handle certains events, like onClick, or make changes to the state.
 
 To use a component, insert the function/class name inside of a bracket like `<Header \>`
 
