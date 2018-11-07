@@ -38,6 +38,6 @@ Berkay Kaplan: Explained how to get the values from the form and the usage of fe
 
 Birkan Gokbag: Wrote the section for props, and state.
 
-Rajeev Ravi: Wrote the section for setup, static HTML page and create-React-app. Revised everyone's sections. 
+Rajeev Ravi: Wrote the section for setup, static HTML page and create-React-app. Revised everyone's sections. Was also the project manager for this project. 
 
 Michael Radey: Wrote the section for building and deploying the React app. Wrote the React app demo.
