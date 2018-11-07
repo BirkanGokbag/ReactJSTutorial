@@ -1,7 +1,7 @@
 # Technology Tasks 1 & 2
 ## Overview
 
-The website can be accessed by opening the site.html file in a web browser.
+The website can be accessed by opening the site.html file in a web browser. The source code used to generate this site can be found in the reactTutorialSite folder.
 
 ## Sources
 https://www.taniarascia.com/getting-started-with-React/
@@ -9,10 +9,6 @@ https://www.taniarascia.com/getting-started-with-React/
 https://Reactjs.org/tutorial/tutorial.html
 
 https://tylermcginnis.com/Reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-React/
-
-https://reactjs.org/docs/components-and-props.html
-
-https://reactjs.org/docs/faq-state.html
 
 
 ## Bloom's Levels of Cognition
@@ -29,8 +25,9 @@ Build/Deploy - Used remember to tell the user how to perform the task.
 
 ## React App
 The React app was a combination of all of these above sections into a single demonstration of React's capabilities.
-To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
-and download the source code. Follow the instructions in the tutorial readme to run this demo in a web browser.
+The 'tutorial' folder is the react project folder for this demo.
+
+Follow the instructions in the tutorial folder's README.md file to run this demo in a web browser.
 
 ## Contributions
 Alyssa Langhals: Wrote the section for React components and JSX.  
