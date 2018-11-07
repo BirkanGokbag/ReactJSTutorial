@@ -1,5 +1,5 @@
 ## JSX
- JSX allows the user to write, render, and return what looks html and include custom xml-like tags to make code simpler and more concise.  Using JSX is not manditory -- the actual html code is generated using createElement, so it is up to the user to determine what to use.
+ JSX allows the user to write, render, and return what looks HTML and include custom xml-like tags to make code simpler to write and more concise.  Using JSX is not mandatory as the actual HTML code is generated using the createElement JavaScript function. It is up to the user to determine what to use.
 
 #### JSX
 
@@ -18,9 +18,9 @@
  );
 ~~~
 
- Both sets of code above generate the same thing, however the JSX approach is a little more direct. This is why many React developers choose to take advantage of JSX in their code.
+ Both code blocks above generate the same thing, however the JSX approach is a little more direct. This is why many React developers choose to take advantage of JSX in their code.
 
- JSX is actually closer to JavaScript than it is to html, so there are a few things to note:
+ JSX is actually closer to JavaScript than it is to HTML, so there are a few things to note:
   * className is used to add css classes
   * in JSX, properties and methods are camelCase, like onClick
   * self-closing tags need to end in a slash
@@ -36,7 +36,7 @@
 ~~~
 
 
-## COMPONENTS
+## Components
  Nearly everything in React is a component.  Components are, at their core, reusable snippets of code that are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.
 
 There are two main types of components in React: Class components and Simple Components
@@ -59,7 +59,7 @@ There are two main types of components in React: Class components and Simple Com
 
 #### CLASS
 
- In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in html components and it must extend the Component class. Class components must include  and implementation of the render() method, and the included return statement can only return a single parent element.
+ In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in HTML components and it must extend the Component class. Class components must include  and implementation of the render() method, and the included return statement can only return a single parent element.
 
 ~~~
  class Footer extends Component {
@@ -73,7 +73,7 @@ There are two main types of components in React: Class components and Simple Com
 }
 ~~~
 
- Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).  Like classes in other programming languages, there may also be other functionality inside of these class components to handle certains events, like onClick, or make changes to the state.
+ Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).  Like classes in other programming languages, there may also be other functionality inside of these class components to handle certain events, like onClick, or make changes to the state.
 
 To use a component, insert the function/class name inside of a bracket like `<Header \>`
 

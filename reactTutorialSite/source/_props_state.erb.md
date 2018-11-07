@@ -1,6 +1,6 @@
-# Props and State
+## Props and State
 
-React.js allows reusable code to be created which can then be applied anywhere. This partial code that can be included anywhere in a project. There are two data structures that allow React.js to do this in addition to components:
+React.js allows reusable code to be created which can then be applied anywhere. This partial code is code that be included anywhere in a project. There are two data structures that allow React.js to do this in addition to components:
 
 * Prop
 
@@ -25,7 +25,7 @@ ReactDOM.render(
 );
 ~~~
 
-In this case, the element variable is rendered to the html element with the id "second". If we populate function "function1" to return a h1 tag with the contents "Hello, {name from prop}", then all of this can be done by:
+In this case, the element variable is rendered to the HTML element with the id "second". If we populate function "function1" to return a h1 tag with the contents "Hello, {name from prop}", then all of this can be done by:
 
 ~~~
 function function1(props){
@@ -42,7 +42,7 @@ ReactDOM.render(
 
 What happens here is that the element gets rendered to the location of the tag assigned the id, "second", and uses the "function1" function to write a h1 tag with "Hello, {prop.name}" where prop.name is an attribute of the input property. In this case the property is "John."
 
-The strength of prop comes from the fact that html pages can be dynamically updated based on the input given. However, react does not allow props to change within the function they are passed into. In this example, props.name cannot be changed within function1, as again, props are read-only. This means that a function that takes prop as an argument cannot change its own input.
+The strength of prop comes from the fact that HTML pages can be dynamically updated based on the input given. However, react does not allow props to change within the function they are passed into. In this example, props.name cannot be changed within function1, as again, props are read-only. This means that a function that takes prop as an argument cannot change its own input.
 
 ## State
 

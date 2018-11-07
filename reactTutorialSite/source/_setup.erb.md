@@ -9,7 +9,7 @@
 
   A React demo has been developed to help illustrate these concepts. To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
   and download the source code. Alternatively, if you've already downloaded the repository, the tutorial folder should have been included as well. Follow the instructions in the README.md file within the 'tutorial' folder to
-  execute the react app. The instructions below will reference this demo in order to better illustrate the concepts discussed.
+  execute the react app. Some of the instructions below will reference this demo in order to better illustrate the concepts discussed.
 
 ## Setup
 
@@ -101,7 +101,7 @@
 The first thing to note, is that in the head of this HTML file, three JavaScript files are loaded. In particular, there is a file for React, a file for the ReactDOM (React Document Object Model) and a CDN for babel, a toolchain which allows newer versions of JavaScript to be used in old browser.
 
 
-In the body of the HTML file, notice that there is a div tag with an id 'root.' This is the "entry point" of the app, as this is where all of the react rendered html is placed. In the script tag below this div, the type is set to text/babel, as the babel compiler is being used to compile the JavaScript (and by extension react) code.
+In the body of the HTML file, notice that there is a div tag with an id 'root.' This is the "entry point" of the app, as this is where all of the react rendered HTML is placed. In the script tag below this div, the type is set to text/babel, as the babel compiler is being used to compile the JavaScript (and by extension react) code.
 
 
 This JavaScript code in question creates a react component called 'App'. This component creates a heading with the text "Hello world!"  The
