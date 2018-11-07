@@ -1,45 +1,54 @@
 # Introduction
-  React is an extension of the base JavaScript functionality to allow for greater ease in developing user interfaces. This is accomplished by using building blocks known as components, passing parameters known as props and adjusting a variable known as the state which each component
-  possesses. By using a render() method, the content displayed by the
-  document can be changed. This set of instructions will go over the
-  setup required to use React followed by walking through each of
-  the various components used to design User Interfaces. Finally, the instructions will go over how to build and deploy a React app.
+  React is an extension of the base JavaScript functionality to allow for greater ease in developing user interfaces. This is accomplished using a few key tools.
+  The first is defining building blocks known as components which define what the app should render. Next, is passing parameters known as props to these components to adjust what they render and when.
+  Third is adjusting a variable known as the state which each component possesses. This allows for a component to store information for later.
+  Beyond just these, tools such as JSX (JavaScript XML), forms or the fetch() function also serve a purpose while using react. All of these tools will be explained in greater detail further below.  
 
-  A react demo has been developed to help illustrate these concepts. To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
+  This document will discuss the setup required to use React followed by a walkthrough of
+  the tools that are used to design user interfaces. Finally, the instructions will go over how to build and deploy a React app.
+
+  A React demo has been developed to help illustrate these concepts. To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
   and download the source code. Alternatively, if you've already downloaded the repository, the tutorial folder should have been included as well. Follow the instructions in the README.md file within the 'tutorial' folder to
   execute the react app. The instructions below will reference this demo in order to better illustrate the concepts discussed.
 
 ## Setup
 
-  If you wish to setup the React project using create-react-app
+  To setup the React project using create-react-app
   (this is a preferable option), NodeJS version 5.2 or higher.
-  NodeJS is needed in order to use NPM, which is what is used to
-  create the React project via create-React-app.
+  NodeJS is needed in order to use NPM, a package manager that is used to
+  create and execute the React project via create-react-app.
 
-#### Direct Download
+  If using a static HTML file, then no prior setup is necessary.
 
+#### Direct Download of NodeJS
 
-  Visit [https://nodejs.org/en/](https://nodejs.org/en/). The most recent
-  versions will be listed on the homepage. Download and install the version
-  of your choosing.
+  Visit [the NodeJS homepage](https://nodejs.org/en/). The most recent
+  versions of NodeJS will be listed here. Download and install the version
+  of your choosing (as long as it is higher than version 5.2).
 
 #### Terminal Installation (OSX/Ubuntu)
 
+#####  **OSX**:
 
-  **OSX**:
-  Run the command:
+   Run the command:
    `curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"`
 
   Alternatively: [Use this link and choose an alternative method of installation.](https://nodejs.org/en/download/package-manager/#alternatives)
 
-  **Ubuntu**:
+#####  **Ubuntu**:
+
   To install the most current version, simply run:
-  `curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-  sudo apt-get install -y nodejs`
+  `curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -`
+
+  Then run:
+  `sudo apt-get install -y nodejs`
 
   Alternatively:  Visit [this](https://nodejs.org/en/download/package-manager/#alternatives) site and run the command for the version of node that you want to install.
 
-  After installing nodeJS, you should check that your installation was successful by
+
+#### Verifying Installation
+  
+  After installing NodeJS, you should check that your installation was successful by
   running  `node -v`, `npm -v`, and `npx -v`. All three should return a version number
   if the installation was successful.
 
@@ -87,26 +96,31 @@
 
 ~~~  
 
-(Source for this example code and information on static HTML: [link] (https://www.taniarascia.com/getting-started-with-React/))
+(Source for this example code: [link] (https://www.taniarascia.com/getting-started-with-React/))
 
-The first thing to note, is that in the head of this HTML file, three CDN's are loaded. In particular, there is a CDN for React, a CDN for the ReactDOM and a CDN for babel which allows newer versions of JavaScript to be used in old browser (this is not required, but would be good to use).
-
-
-In the body of the HTML file, note that there is a div tag with an id 'root.' This is the "entry point" of the app. In the script tag, the type is set to text/babel, as the babel compiler is being used to compile the JavaScript code.
+The first thing to note, is that in the head of this HTML file, three JavaScript files are loaded. In particular, there is a file for React, a file for the ReactDOM (React Document Object Model) and a CDN for babel, a toolchain which allows newer versions of JavaScript to be used in old browser.
 
 
-This JavaScript code in  question creates a component called 'App' this component simply creates a heading with the text "Hello world!" The code then uses the
-ReactDOM.render() function to put this HTML within the div assigned with the root id. The code within this script can be expanded to include more React functionality
-(described in later sections). However, again, this method is not the preferred way to use React. Instead it is a better idea to use create-React-app as described below.
+In the body of the HTML file, notice that there is a div tag with an id 'root.' This is the "entry point" of the app, as this is where all of the react rendered html is placed. In the script tag below this div, the type is set to text/babel, as the babel compiler is being used to compile the JavaScript (and by extension react) code.
+
+
+This JavaScript code in question creates a react component called 'App'. This component creates a heading with the text "Hello world!"  The
+ReactDOM.render() function puts this HTML within the div assigned the root id.
+
+Of course, the code within this script can be expanded to include more React functionality (as described in later sections). However,recall that this method is not the preferred way to set up a React project. Instead it is  more preferable to use create-react-app as described below.
 
 ## Using React via create-react-app
-The React app can also be generated using a preconfigured environment developed by Facebook. To use this, NodeJS (and NPM which comes with it) needs to be installed with a version number greater than 5.2.
 
-Once NodeJS has been installed, a React project can be created using the command: `npx create-react-app <NAME>` where <NAME> is the name of the project.
+The React app can also be generated using a preconfigured environment designed by Facebook. This environment contains everything needed to start developing a react app.  
+To use this environment, NodeJS (and NPM which comes with it) needs to be installed at a version greater than 5.2. Instructions for this can be found in the setup portion above.
 
-To start a project once created, first enter the directory of the project, then run the command: `npm start`
+Once NodeJS has been installed, a React project can be created using the command: `npx create-react-app <NAME>` where <NAME> is the desired name of the project.
+
+To start a project after it has been created, while in the directory of the project, run: `npm start`
 
 
-This will load a web browser with the webapp at localhost: 3000.
+This will open a web browser with the webapp loaded at localhost: 3000.
 
-The files being used to generate this site are found in the ./<NAME>/src folder. The file index.js contains the code which renders the React code using the component defined in app.js. By modifying app.js, the display of the app will also change. If you wish to start from scratch, you can delete all of the files in the src directory except for index.js and index.css. In addition, ensure that the index.js file is importing React, ReactDOM and the css file. At this stage, you will be able to write JavaScript code to render the page as you see fit. The rest of this tutorial will describe the various tools available to actually design a UI using React.
+The files being used to generate this app can be found in the ./<NAME>/src folder. The file index.js contains the code that renders the web page using the component defined in app.js. By modifying app.js, the appearance of the webpage will also change without any need to change index.js.
+
+If you wish to start from scratch, you can delete all of the files in the src directory except for index.js and index.css. In addition, if modifying index.js ensure that the index.js file is still importing React, ReactDOM and the css file. From this stage, it's possible to write JavaScript code (using React's extensions) to render the page as you see fit.
