@@ -1,7 +1,9 @@
 # Technology Tasks 1 & 2
 ## Overview
 
-The website can be accessed by opening the site.html file in a web browser. The source code used to generate this site can be found in the reactTutorialSite folder.
+The website can be accessed by opening the site.html file in a web browser. The source code used to generate this site can be found in the reactTutorialSite folder. To manually build the site, the middleman gem
+and bundler are required. Once you have these gems installed, you can build the site by running
+`bundle exec middleman build`  inside of the reactTutorialSite folder.
 
 ## Sources
 https://www.taniarascia.com/getting-started-with-React/
@@ -32,10 +34,10 @@ Follow the instructions in the tutorial folder's README.md file to run this demo
 ## Contributions
 Alyssa Langhals: Wrote the section for React components and JSX.  
 
-Berkay Kaplan: Explained how to get the values from the form and the usage of fetch. Created Berkay's Section.md and this was used in formsAPI in the middleman website.
+Berkay Kaplan: Explained how to get the values from the form and the usage of fetch. Created Berkay's Section.md and this was eventually used in formsAPI.md in the middleman website.
 
 Birkan Gokbag: Wrote the section for props, and state.
 
-Rajeev Ravi: Wrote the section for setup, static HTML page and create-React-app.
+Rajeev Ravi: Wrote the section for setup, static HTML page and create-React-app. Revised everyone's sections. 
 
 Michael Radey: Wrote the section for building and deploying the React app. Wrote the React app demo.
