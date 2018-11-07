@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>React.js Tutorial</title>
+<link rel="stylesheet" type="text/css" href="css/site.css">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <h1 id = "title" > React.js Tutorial</h1>
+      <h4 id = "date"> Last Updated: 11/07/18</h4>
+      <h4 id = "team" > <-- An Error Occured --> </h4>
+      <hr>
+      <div>
+  <h1 id="introduction">Introduction</h1>
+<p>React is an extension of the base JavaScript functionality to allow for greater ease in developing user interfaces. This is accomplished using a few key tools.
+  The first is defining building blocks known as components which define what the app should render. Next, is passing parameters known as props to these components to adjust what they render and when.
+  Third is adjusting a variable known as the state which each component possesses. This allows for a component to store information for later.
+  Beyond just these, tools such as JSX (JavaScript XML), forms or the fetch() function also serve a purpose while using react. All of these tools will be explained in greater detail further below.</p>
+
+<p>This document will discuss the setup required to use React followed by a walkthrough of
+  the tools that are used to design user interfaces. Finally, the instructions will go over how to build and deploy a React app.</p>
+
+<p>A React demo has been developed to help illustrate these concepts. To view this demonstration go to this link: https://github.com/cse3901-osu-2018au/An-Error-Occured-Tech-Tasks-I-II/tree/master/tutorial
+  and download the source code. Alternatively, if you've already downloaded the repository, the tutorial folder should have been included as well. Follow the instructions in the README.md file within the 'tutorial' folder to
+  execute the react app. Some of the instructions below will reference this demo in order to better illustrate the concepts discussed.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>To setup the React project using create-react-app
+  (this is a preferable option), NodeJS version 5.2 or higher.
+  NodeJS is needed in order to use NPM, a package manager that is used to
+  create and execute the React project via create-react-app.</p>
+
+<p>If using a static HTML file, then no prior setup is necessary.</p>
+
+<h4 id="direct-download-of-nodejs">Direct Download of NodeJS</h4>
+
+<p>Visit <a href="https://nodejs.org/en/">the NodeJS homepage</a>. The most recent
+  versions of NodeJS will be listed here. Download and install the version
+  of your choosing (as long as it is higher than version 5.2).</p>
+
+<h4 id="terminal-installation-osxubuntu">Terminal Installation (OSX/Ubuntu)</h4>
+
+<h5 id="osx"><strong>OSX</strong>:</h5>
+
+<p>Run the command:
+   <code>curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*&gt;node-(.*)\.pkg&lt;/a&gt;.*|\1|p')}.pkg" &gt; "$HOME/Downloads/node-latest.pkg" &amp;&amp; sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"</code></p>
+
+<p>Alternatively: <a href="https://nodejs.org/en/download/package-manager/#alternatives">Use this link and choose an alternative method of installation.</a></p>
+
+<h5 id="ubuntu"><strong>Ubuntu</strong>:</h5>
+
+<p>To install the most current version, simply run:
+  <code>curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -</code></p>
+
+<p>Then run:
+  <code>sudo apt-get install -y nodejs</code></p>
+
+<p>Alternatively:  Visit <a href="https://nodejs.org/en/download/package-manager/#alternatives">this</a> site and run the command for the version of node that you want to install.</p>
+
+<h4 id="verifying-installation">Verifying Installation</h4>
+
+<p>After installing NodeJS, you should check that your installation was successful by
+  running  <code>node -v</code>, <code>npm -v</code>, and <code>npx -v</code>. All three should return a version number
+  if the installation was successful.</p>
+
+<h2 id="using-react-via-static-html">Using React via Static HTML</h2>
+<p>(Note that this option is the less preferable one. While it doesn't require having NodeJS installed, it is less efficient and harder to maintain).</p>
+
+<p>To help illustrate how using React via static HTML works, take a look at this example HTML file:</p>
+
+<p><strong>Index.html</strong></p>
+
+<pre><code>
+&lt;!doctype html&gt;
+    &lt;html&gt;
+
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+
+      &lt;title&gt;Hello React!&lt;/title&gt;
+
+      &lt;script src="https://unpkg.com/React@16/umd/React.development.js"&gt;&lt;/script&gt;
+      &lt;script src="https://unpkg.com/React-dom@16/umd/React-dom.development.js"&gt;&lt;/script&gt;
+      &lt;script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+      &lt;div id="root"&gt;&lt;/div&gt;
+
+      &lt;script type = text/babel&gt;
+          class App extends React.Component {
+              render() {
+                  return (
+                      &lt;h1&gt;Hello world!&lt;/h1&gt;
+                  );
+              }
+          }
+
+          ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+      &lt;/script&gt;
+
+  &lt;/body&gt;
+
+  &lt;/html&gt;
+
+</code></pre>
+
+<p>(Source for this example code: <a href="https://www.taniarascia.com/getting-started-with-React/">link</a>)</p>
+
+<p>The first thing to note, is that in the head of this HTML file, three JavaScript files are loaded. In particular, there is a file for React, a file for the ReactDOM (React Document Object Model) and a CDN for babel, a toolchain which allows newer versions of JavaScript to be used in old browser.</p>
+
+<p>In the body of the HTML file, notice that there is a div tag with an id 'root.' This is the "entry point" of the app, as this is where all of the react rendered HTML is placed. In the script tag below this div, the type is set to text/babel, as the babel compiler is being used to compile the JavaScript (and by extension react) code.</p>
+
+<p>This JavaScript code in question creates a react component called 'App'. This component creates a heading with the text "Hello world!"  The
+ReactDOM.render() function puts this HTML within the div assigned the root id.</p>
+
+<p>Of course, the code within this script can be expanded to include more React functionality (as described in later sections). However,recall that this method is not the preferred way to set up a React project. Instead it is  more preferable to use create-react-app as described below.</p>
+
+<h2 id="using-react-via-create-react-app">Using React via create-react-app</h2>
+
+<p>The React app can also be generated using a preconfigured environment designed by Facebook. This environment contains everything needed to start developing a react app.<br />
+To use this environment, NodeJS (and NPM which comes with it) needs to be installed at a version greater than 5.2. Instructions for this can be found in the setup portion above.</p>
+
+<p>Once NodeJS has been installed, a React project can be created using the command: <code>npx create-react-app &lt;NAME&gt;</code> where <NAME> is the desired name of the project.</NAME></p>
+
+<p>To start a project after it has been created, while in the directory of the project, run: <code>npm start</code></p>
+
+<p>This will open a web browser with the webapp loaded at localhost: 3000.</p>
+
+<p>The files being used to generate this app can be found in the ./<NAME>/src folder. The file index.js contains the code that renders the web page using the component defined in app.js. By modifying app.js, the appearance of the webpage will also change without any need to change index.js.</NAME></p>
+
+<p>If you wish to start from scratch, you can delete all of the files in the src directory except for index.js and index.css. In addition, if modifying index.js ensure that the index.js file is still importing React, ReactDOM and the css file. From this stage, it's possible to write JavaScript code (using React's extensions) to render the page as you see fit.</p>
+
+<hr>
+  <h2 id="jsx">JSX</h2>
+<p>JSX allows the user to write, render, and return what looks HTML and include custom xml-like tags to make code simpler to write and more concise.  Using JSX is not mandatory as the actual HTML code is generated using the createElement JavaScript function. It is up to the user to determine what to use.</p>
+
+<h4 id="jsx-1">JSX</h4>
+
+<pre><code> const header =
+  &lt;div className="header"&gt;
+   &lt;h1&gt;Connect 4&lt;/h1&gt;
+  &lt;/div&gt;;
+</code></pre>
+
+<h4 id="createelement">createElement</h4>
+
+<pre><code> const header = React.createElement('div', {className: 'header'},
+  React.createElement('h1',{}, 'Connect 4')
+ );
+</code></pre>
+
+<p>Both code blocks above generate the same thing, however the JSX approach is a little more direct. This is why many React developers choose to take advantage of JSX in their code.</p>
+
+<p>JSX is actually closer to JavaScript than it is to HTML, so there are a few things to note:
+  * className is used to add css classes
+  * in JSX, properties and methods are camelCase, like onClick
+  * self-closing tags need to end in a slash</p>
+
+<p>JavaScript may also be used inside of JSX by using curly braces.</p>
+
+<pre><code> const title = 'Connect 4';
+ const header =
+  &lt;div className="header"&gt;
+   &lt;h1&gt;{title}&lt;/h1&gt;
+  &lt;/div&gt;;
+</code></pre>
+
+<h2 id="components">Components</h2>
+<p>Nearly everything in React is a component.  Components are, at their core, reusable snippets of code that are usually written in separate files, exported, and then loaded into the main application to reuse as needed.  This makes the main application easier to read.</p>
+
+<p>There are two main types of components in React: Class components and Simple Components</p>
+
+<h4 id="simple">SIMPLE</h4>
+
+<p>Simple components are light-weight components that are written as functions.  These functions return JSX code that can be easily inserted into a page. (Props can be used to pass information into these functions, as will be discussed in the next sections.)</p>
+
+<p>Here is a Simple component that will return a header.</p>
+
+<pre><code> function Header(){
+    return (
+        &lt;div className="header"&gt;
+          &lt;h1&gt;Connect 4&lt;/h1&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre>
+
+<h4 id="class">CLASS</h4>
+
+<p>In comparison, components with the key word "class" are custom class components.  The name of the class in React must be capitalized to differentiate the custom component from built-in HTML components and it must extend the Component class. Class components must include  and implementation of the render() method, and the included return statement can only return a single parent element.</p>
+
+<pre><code> class Footer extends Component {
+   render(){
+    return (
+        &lt;div className="footer"&gt;
+          &lt;h1&gt;An Error Occured&lt;/h1&gt;
+        &lt;/div&gt;
+    );
+   }
+}
+</code></pre>
+
+<p>Class components are more powerful and allow for more functionality, like keeping state (as will be discussed in the next sections).  Like classes in other programming languages, there may also be other functionality inside of these class components to handle certain events, like onClick, or make changes to the state.</p>
+
+<p>To use a component, insert the function/class name inside of a bracket like <code>&lt;Header \&gt;</code></p>
+
+<p>Components may also be nested.  The class below returns an element that has a header and footer inside of it.</p>
+
+<pre><code>class Body extends Component {
+  render() {
+    return (
+      &lt;div className="body"&gt;
+       &lt;Header /&gt;
+       &lt;Footer /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+
+<hr>
+
+  <h2 id="props-and-state">Props and State</h2>
+
+<p>React.js allows reusable code to be created which can then be applied anywhere. This partial code is code that be included anywhere in a project. There are two data structures that allow React.js to do this in addition to components:</p>
+
+<ul>
+  <li>
+    <p>Prop</p>
+  </li>
+  <li>
+    <p>State</p>
+  </li>
+</ul>
+
+<h2 id="prop">Prop</h2>
+
+<p>Prop stands for property. This data structure builds up on the component class. Prop allows specified properties to be passed into the component for use.</p>
+
+<p>The arguments are passed into the components respective functions as a property. The syntax for passing properties into function1, for example, is written as:</p>
+
+<pre><code>const example = &lt;function1 name = "john"&gt;;
+</code></pre>
+
+<p>"example" is a constant variable that is assigned to this component so that React can access this element and render it to a place. This is done by the render function within ReactDOM, which looks like something like this:</p>
+
+<pre><code>ReactDOM.render(
+  element,
+  document.getElementById('second')
+);
+</code></pre>
+
+<p>In this case, the element variable is rendered to the HTML element with the id "second". If we populate function "function1" to return a h1 tag with the contents "Hello, {name from prop}", then all of this can be done by:</p>
+
+<pre><code>function function1(props){
+  return &lt;h1&gt;Hello, {props.name} &lt;/h1&gt;;
+}
+
+const example = &lt;function1 name = "john"&gt;;
+
+ReactDOM.render(
+  element,
+  document.getElementById('second')
+);
+</code></pre>
+
+<p>What happens here is that the element gets rendered to the location of the tag assigned the id, "second", and uses the "function1" function to write a h1 tag with "Hello, {prop.name}" where prop.name is an attribute of the input property. In this case the property is "John."</p>
+
+<p>The strength of prop comes from the fact that HTML pages can be dynamically updated based on the input given. However, react does not allow props to change within the function they are passed into. In this example, props.name cannot be changed within function1, as again, props are read-only. This means that a function that takes prop as an argument cannot change its own input.</p>
+
+<h2 id="state">State</h2>
+
+<p>Similarly to prop, state also builds on component. However, while prop is passed into the component, state is managed and changed within the component.</p>
+
+<p>Assume that we have a function called "function2," and its only purpose is to call a function to change a state named "this.state.name", where "this.state" is a rendered value, and this.state.name has the value "hello" stored in it. So roughly it looks something like this:</p>
+
+<pre><code>function2() {
+
+  this.changeValue();
+  this.changeValue();
+  this.changeValue();
+
+}
+</code></pre>
+
+<p>Now if we want to change the this.state.name to have "1" concatenated to it at the end of each call, our changeValue function would look like this:</p>
+
+<pre><code>changeValue() {
+  this.setState((state) =&gt; {
+    return {name: state.name + "1"}
+  });
+}
+</code></pre>
+
+<p>The changeValue sets the state for this, and it updates the this.state.name by adding 1 next to it. Therefore, after the first call of changeValue, we would have "hello1" rendered on the page. On the second time, we would have "hello11" rendered on the page, and "hello111" on the third time.</p>
+
+<p>Even though this.state.name shows "hello", if accessed within the function, on the page when the state is rendered, the changes will show and it will be "hello111" instead.</p>
+
+<p>Combining both of these is an example of the structure for a state implementation with a function that updates one of its attributes is located down below.</p>
+
+<pre><code>changeValue() {
+  this.setState((state) =&gt; {
+    return {name: state.name + "1"}
+  });
+}
+
+function2() {
+
+  this.changeValue();
+  this.changeValue();
+  this.changeValue();
+
+  //When this.state.name is accessed here, within the function, it will return "hello". However when rendered into the webpage, then it will be "hello111" on screen.
+}
+</code></pre>
+
+<h3 id="setstate">setState</h3>
+
+<p>setState is an instance function that allows the state to be changed. One important characteristic of setState is the fact that it is asynchronous. React will wait until all of the components call setState within their event handlers before starting to re-render the page.</p>
+
+<p>The reason for this is to make sure that the React structure stays consistent. Each call shouldn't call re-render, but it should instead be called only when everything is ready to be rendered. This improves the performance of React as it prevents unnecessary re-renders from happening and allows the state to be consistent throughout the functions.</p>
+
+<hr>
+
+  <h2 id="submitting-form-data">Submitting Form Data</h2>
+<p>Forms are very useful elements in webpages, and can be written in many languages, such as HTML and React. Although the purpose of the forms do not vary drastically, HTML forms work differently from other DOM elements in React. For instance, form validations must be handled manually by React. The sections below will cover the most frequently used form elements in React.</p>
+
+<h4 id="basic-input">Basic Input</h4>
+<p>There are two methods of input in React: controlled and uncontrolled. The main difference between these is that in controlled inputs, the form data is handled by a React component, while in uncontrolled components, the form data is handled by the DOM itself. The generally used input tags are <code>&lt;textarea&gt;</code>, <code>&lt;input&gt;</code>, and <code>&lt;select&gt;</code>.</p>
+
+<p>Uncontrolled inputs resemble HTML form elements, and these inputs can remember the last user input. With this input, the value is needed to be pulled when the user needs it or when it is submitted. Their value can be received using the <code>onClick</code> function. Controlled inputs is more the React way and update the variable attached to the tag when the value in the input field is changed. For instance, this can be done with the syntax:</p>
+
+<p><code>&lt;input value={someValue} onChange={handleChange} /&gt;</code></p>
+
+<p>where <code>someValue</code> is a variable and <code>handleChange</code> is the function.</p>
+
+<h4 id="submitting-the-form">Submitting the Form</h4>
+<p>The uncontrolled input types can be submitted by using the onSubmit tag attached to a form element that has a button. This can be done with the syntax:</p>
+
+<p><code>&lt;form onSubmit={this.handleSubmit}&gt;</code></p>
+
+<p>where <code>this.handleSubmit</code> is a function.</p>
+
+<p>The controlled inputs uses the <code>onChange</code> to capture the text value in the input when any change occurs. the variable in the value attribute is updated, and the function called in <code>onChange</code> attribute executes at any change</p>
+
+<h4 id="an-example-form">An Example Form</h4>
+
+<p>in the connect 4 game a form was used to get the player's information. The code snippet for this function is:</p>
+
+<pre><code>
+&lt;form onSubmit={this.handleSubmit}&gt;
+  &lt;label&gt;
+    Player 1 Name:    
+    &lt;input type="text" value={this.state.valuePlayer1} onChange={this.handleChangePlayer1} /&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+     Player 2 Name:
+     &lt;input type="text" value={this.state.valuePlayer2} onChange={this.handleChangePlayer2} /&gt;
+   &lt;/label&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+
+
+handleSubmit(event) {
+  if(this.state.valuePlayer2 != '' &amp;&amp; this.state.valuePlayer1 != ''){
+    this.props.playerData.player1Name = this.state.valuePlayer1;
+    this.props.playerData.player2Name = this.state.valuePlayer2;
+    this.setState({toGame: true});
+  }else{
+    alert('please enter a name for both players');
+  }
+}
+
+</code></pre>
+
+<h2 id="pulling-api-data-using-fetchthen">Pulling API data using fetch.then</h2>
+<p>React also has built in functionality to fetch data from an external web server.</p>
+
+<p>The browser connects to the API of an external web server and pulls the data it needs. The sample syntax is:</p>
+
+<p><code>fetch(url).then(result =&gt; result.json()).then(result =&gt; {this.setState({data: result})});</code></p>
+
+<p>The <code>url</code> is the website that the data will be retrieved from. The first <code>then</code> converts the result into the JSON format. The second <code>then</code> assigns the JSON API into the data array.</p>
+
+<hr>
+
+  <h2 id="building-and-deploying-a-react-app">Building and Deploying a React App</h2>
+<p>Everything done so far has been in a development environment meaning that everything has been compiled and updated on the fly. When deployed, static files should not be loading in the source code. To accomplish this there are  a few requirements that will be walked through below.</p>
+
+<p>One possible deployment method is if the user just wants to compile all of the React code and place it in the root of a directory somewhere. To do this, move to the react project folder. Then -</p>
+
+<p>run: <code>npm run build </code></p>
+
+<p>This will create a build folder which will contain the app. Place the contents of that folder anywhere, and the build is done!</p>
+
+<p>Another option is to have npm deploy the project itself. Github has free hosting so npm will build to GitHub pages. Before doing this, make sure that the local React environment has been exited, so the code isn’t currently running. First, add a homepage field to package.json that has the URL for the app to live on. This code segment looks like:</p>
+
+<p><code>"homepage": "https://{username}.github.io/{repo_name}", </code></p>
+
+<p>Where username is the user's github username and repo_name is the repository where the react application is located.</p>
+
+<p>We’ll also add these two lines to the scripts property.
+ <code>"predeploy": "npm run build", </code>
+ <code>"deploy": "gh-pages -d build" </code></p>
+
+<p>In the react project, add gh-pages to the devDependencies. To do this,</p>
+
+<p>run: <code>npm install --save-dev gh-pages</code></p>
+
+<p>Next, create the build, which will have all the compiled, static files.</p>
+
+<p>run: <code>npm run build </code></p>
+
+<p>Finally, deploy to gh-pages.</p>
+
+<p>run: <code>npm run deploy </code></p>
+
+<p>And the deployment is done! The app is now available live at: https://{username}.github.io/{repo_name}</p>
+
+
+</div>
+
+    </div>
+  </body>
+</html>
